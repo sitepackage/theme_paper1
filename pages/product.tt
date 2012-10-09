@@ -27,16 +27,21 @@
         <ul>
           <li>
             [%- if product.variants.size == 1 %]
+              [% product.options.join(' / ') %]            
               [% variant = product.variants.first %]
               [% variant.name | html %]
-              [%- if variant.price != "0.00" %]                
+              [%- if variant.price != "0.00" %]                 
                 [%- if variant.compare_at_price %]
                 <span class="compare_at_price">[% variant.compare_at_price | money %]</span>
                 [%- end %]
                 <span class="price">- [% variant.price | money %]</span>
               [%- end %]              
-              <input type="hidden" name="variant" value="[% product.variants.first.id %]" />
-            [%- else %]
+              [%- if variant.available %]
+              <input type="hidden" name="variant" value="[% product.variants.first.id %]" />              
+              [%- else %]                            
+              <strong style="text-transform: uppercase">[% 'Sold Out' | loc %]</strong>
+              [%- end %]  
+            [%- else %]                              
               [% product.options.join(' / ') %]
               [%- foreach variant in product.variants %]
               <div>

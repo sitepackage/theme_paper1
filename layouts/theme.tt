@@ -187,7 +187,7 @@
             <div class="category_container categories">
               [%- if !settings.collection_enabled %]              
               <div class="cb sidebar collection">
-                <h2 class="topic2" title="[% 'Browse by Collection' | loc %]"><span>Collection</span></h2>
+                <h2 class="topic2" title="[% 'Browse by Collection' | loc %]"><span>[% 'Collections' | loc %]</span></h2>
                   <div class="widgets_container">
                   [%- if linklists.collections.links %]
                   <ul>
@@ -239,7 +239,7 @@
               [%- end %]              
               [%- if settings.brand_style && collection.handle && collection.handle != 'all' %]
               <div class="sidebar brand nav-left">
-                <h2 class="topic2" title="[% 'Browse by Brand' | loc %]"><span>[% 'Browse by Brand' | loc %]</span></h2>
+                <h2 class="topic2" title="[% 'Browse by Brand' | loc %]"><span>[% 'Brands' | loc %]</span></h2>
                 <div class="widgets_container">  
                   [%- if !settings.brand_style || settings.brand_style == 1 %]
                   <form action="[% req.url %]" method="get">
@@ -263,7 +263,7 @@
               
               [%- if settings.type_style && collection.handle && collection.handle != 'all' %]
               <div class="sidebar type nav-left">
-                <h2 class="topic2" title="[% 'Browse by Type' | loc %]"><span>[% 'Browse by Type' | loc %]</span></h2>
+                <h2 class="topic2" title="[% 'Browse by Type' | loc %]"><span>[% 'Types' | loc %]</span></h2>
                 <div class="widgets_container"> 
                   [%- if !settings.type_style || settings.type_style == 1 %]
                   <form action="[% req.url %]" method="get">
